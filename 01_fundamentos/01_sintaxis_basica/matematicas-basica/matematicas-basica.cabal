@@ -1,0 +1,34 @@
+cabal-version: 1.12
+
+name:           matematicas-basicas
+version:        0.1.0.0
+description:    Biblioteca de funciones matemáticas simples en Haskell
+author:         Diego Obando
+maintainer:     diego@ejemplo.com
+category:       Math
+build-type:     Simple
+
+library
+  exposed-modules:
+      Matematicas.Basicas
+      Matematicas.Geometria
+      Matematicas.Estadistica
+  other-modules:
+      Paths_matematicas_basicas
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable matematicas-basicas-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_matematicas_basicas
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , matematicas-basicas
+  default-language: Haskell2010
